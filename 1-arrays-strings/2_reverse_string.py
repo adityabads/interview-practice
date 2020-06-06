@@ -6,6 +6,7 @@ import unittest
 
 
 def reverse_string(s: List[str]) -> None:
+    """Reverses list of characters in place"""
     i = 0
     j = len(s) - 1
     while i < j:

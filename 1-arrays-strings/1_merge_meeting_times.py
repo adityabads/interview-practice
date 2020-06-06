@@ -12,6 +12,7 @@ import unittest
 
 
 def merge_meeting_times(times: List[Tuple[int]]) -> List[Tuple[int]]:
+    """Merge list of closed intervals (i, j)"""
     times = sorted(times)
     merged = []
     for time in times:
