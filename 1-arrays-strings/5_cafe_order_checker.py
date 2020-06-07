@@ -4,8 +4,9 @@
 # list for the kitchen, where they should be handled first-come, first-served.
 #
 # Write a function to check that my service is first-come, first-served. All
-# food should come out in the same order customers requested it. We'll represent
-# each customer order as a unique integer.
+# food should come out in the same order customers requested it.
+#
+# Assume each customer order as a unique integer.
 #
 # EXAMPLE
 # Take-out orders: [1, 3, 5]

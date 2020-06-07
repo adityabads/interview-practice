@@ -1,7 +1,8 @@
 # Reverse words
 # Write a function reverse_words() that takes a message as a list of characters
-# and reverses the order of the words in place. When writing your function,
-# assume the message contains only letters and spaces, and all words are
+# and reverses the order of the words in place.
+#
+# Assume the message contains only letters and spaces, and all words are
 # separated by one space.
 
 from typing import List

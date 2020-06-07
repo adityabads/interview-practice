@@ -1,7 +1,8 @@
 # Merge meeting times
 # Write a function merge_ranges() that takes a list of multiple meeting time
-# ranges and returns a list of condensed ranges. Do not assume the meetings
-# are in order. The meeting times are coming from multiple teams.
+# ranges and returns a list of condensed ranges.
+#
+# Do not assume the meetings are in order.
 #
 # EXAMPLE
 # Input:  [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
@@ -28,7 +29,7 @@ def merge_intervals(times: List[Tuple[int]]) -> List[Tuple[int]]:
 
 
 class TestMergeMeetingTimes(unittest.TestCase):
-    def test_merge_meeting_times(self):
+    def test_merge_intervals(self):
         tests = [
             [[(1, 2), (2, 3)], [(1, 3)]],
             [[(1, 3), (2, 5)], [(1, 5)]],

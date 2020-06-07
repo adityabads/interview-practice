@@ -1,6 +1,7 @@
 # Merge sorted lists
-# We have two lists of numbers sorted numerically already, in lists. Write a
-# function to merge our lists of orders into one sorted list.
+# We have two lists of numbers sorted numerically already, in lists.
+#
+# Write a function to merge our lists of orders into one sorted list.
 #
 # EXAMPLE
 # Input:  [3, 4, 6, 10, 11, 15], [1, 5, 8, 12, 14, 19]
@@ -28,7 +29,7 @@ def merge(a: List[int], b: List[int]) -> List[int]:
     return merged
 
 
-class TestMerge(unittest.TestCase):
+class TestMergeSortedLists(unittest.TestCase):
     def test_merge(self):
         tests = [
             [[], []],
