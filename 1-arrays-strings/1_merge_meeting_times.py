@@ -11,7 +11,7 @@ from typing import List, Tuple
 import unittest
 
 
-def merge_meeting_times(times: List[Tuple[int]]) -> List[Tuple[int]]:
+def merge_intervals(times: List[Tuple[int]]) -> List[Tuple[int]]:
     """Merge list of closed intervals (i, j)"""
     times = sorted(times)
     merged = []
@@ -39,7 +39,7 @@ class TestMergeMeetingTimes(unittest.TestCase):
             [[(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)], [(0, 1), (3, 8), (9, 12)]]
         ]
         for times, merged in tests:
-            self.assertEqual(merge_meeting_times(times), merged)
+            self.assertEqual(merge_intervals(times), merged)
 
 
 if __name__ == "__main__":
