@@ -7,7 +7,15 @@
 # EXAMPLE
 # Input:  [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
 # Output: [(0, 1), (3, 8), (9, 12)]
+#
+# BONUS
+# 1. What if we did have an upper bound on the input values? Could we improve
+# our runtime? Would it cost us memory?
+#
+# 2. Could we do this "in place" on the input list and save some space? What
+# are the pros and cons of doing this in place?
 
+from myunionfind import UnionFind
 from typing import List, Tuple
 import unittest
 
@@ -26,6 +34,11 @@ def merge_intervals(times: List[Tuple[int]]) -> List[Tuple[int]]:
         else:
             merged.append(time)
     return merged
+
+
+def merge_intervals_bounded(times: List[Tuple[int]], k: int) -> List[Tuple[int]]:
+    """Merge list of closed intervals (i, j), with upper bound k"""
+    uf = UnionFind(k+1)
 
 
 class TestMergeMeetingTimes(unittest.TestCase):

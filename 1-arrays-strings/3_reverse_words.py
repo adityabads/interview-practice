@@ -4,6 +4,9 @@
 #
 # Assume the message contains only letters and spaces, and all words are
 # separated by one space.
+#
+# BONUS
+# How would you handle punctuation?
 
 from typing import List
 import unittest
@@ -35,7 +38,7 @@ def next_word_inds(s: List[str], i: int, j: int) -> int:
     while i < j and s[i] == " ":
         i += 1
     wordend = i
-    while wordend < j and s[wordend+1] != " ":
+    while wordend < j and s[wordend+1] not in {" ", ",", ".", "!", ";"}:
         wordend += 1
     return i, wordend
 
@@ -43,7 +46,7 @@ def next_word_inds(s: List[str], i: int, j: int) -> int:
 class TestReverseWords(unittest.TestCase):
     def test_reverse_words(self):
         messages = ["cake pound steal", "a lovely day",
-                    "i am a", "  more   spaces here "]
+                    "i am a", "  more   spaces here ", " you! see  I  "]
         stringified = [[x for x in message] for message in messages]
         for message in stringified:
             reverse_words(message)
