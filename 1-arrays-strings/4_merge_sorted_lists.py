@@ -37,6 +37,21 @@ def merge(a: List[int], b: List[int]) -> List[int]:
     return merged
 
 
+def merge_all(lists: List[List[int]]) -> List[int]:
+    """Returns sorted merge of all sorted lists, in a list"""
+    merged = []
+    n = len(lists)
+    indices = [0 for _ in range(n)]
+    lengths = [len(list_) for list_ in lists]
+    while any([indices[i] < lengths[i] for i in range(n)]):
+        vals = [lists[i][indices[i]] if indices[i] < lengths[i]
+                else float("inf") for i in range(n)]
+        mini = vals.index(min(vals))
+        merged.append(lists[mini][indices[mini]])
+        indices[mini] += 1
+    return merged
+
+
 class TestMergeSortedLists(unittest.TestCase):
     def test_merge(self):
         tests = [
@@ -52,6 +67,17 @@ class TestMergeSortedLists(unittest.TestCase):
                 a.extend(b)
                 expected = sorted(a)
                 self.assertEqual(merged, expected)
+
+    def test_merge_all(self):
+        tests = [
+            [[], [], [], []],
+            [[1], [], [], [3], []],
+            [[-5, -1, 0, 3, 3, 9], [-2, 4, 7, 10]],
+            [[-3, 1, 7], [2, 5, 7], [-2, 0, 8, 9], [-2, 2]]
+        ]
+        for test in tests:
+            with self.subTest(test=test):
+                print(merge_all(test))
 
 
 if __name__ == "__main__":
