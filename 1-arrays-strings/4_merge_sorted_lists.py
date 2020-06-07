@@ -8,11 +8,11 @@
 # Output: [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
 #
 # BONUS
-# What if we wanted to merge several sorted lists? Write a function that takes
-# as an input a list of sorted lists and outputs a single sorted list with all
-# the items from each list.
+# 1. What if we wanted to merge several sorted lists? Write a function that
+# takes as an input a list of sorted lists and outputs a single sorted list
+# with all the items from each list.
 #
-# Do we absolutely have to allocate a new list to use for the merged output?
+# 2. Do we absolutely have to allocate a new list to use for the merged output?
 # Where else could we store our merged list? How would our function need to change?
 
 from typing import List

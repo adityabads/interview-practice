@@ -8,6 +8,16 @@
 #
 # Assume your users will watch exactly two movies. Don't make your users watch
 # the same movie twice. Optimize for runtime over memory
+#
+# BONUS
+# 1. What if we wanted the movie lengths to sum to something close to the flight
+# length (say, within 20 minutes)?
+#
+# 2. What if we wanted to fill the flight length as nicely as possible with any
+# number of movies (not just 2)?
+#
+# 3. What if we knew that movie_lengths was sorted? Could we save some space
+# and/or time?
 
 from typing import List
 import unittest
