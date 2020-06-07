@@ -11,6 +11,7 @@ import unittest
 
 
 def merge(a: List[int], b: List[int]) -> List[int]:
+    """Returns sorted merge of two sorted lists"""
     merged = []
     i = j = 0
     alen = len(a)
