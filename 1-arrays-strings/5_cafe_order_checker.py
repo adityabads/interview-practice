@@ -1,14 +1,18 @@
 # Cafe order checker
+# I have two registers: one for take-out orders, and the other for the other
+# folks eating inside the cafe. All the customer orders get combined into one
+# list for the kitchen, where they should be handled first-come, first-served.
+#
 # Write a function to check that my service is first-come, first-served. All
 # food should come out in the same order customers requested it. We'll represent
 # each customer order as a unique integer.
-
+#
 # EXAMPLE
 # Take-out orders: [1, 3, 5]
 # Dine-in orders:  [2, 4, 6]
 # Served orders:   [1, 2, 4, 6, 5, 3]
 # Output:          False (3 was requested before 5, but 5 was served first)
-
+#
 # EXAMPLE
 # Take-out orders: [17, 8, 24]
 # Dine-in orders:  [12, 19, 2]

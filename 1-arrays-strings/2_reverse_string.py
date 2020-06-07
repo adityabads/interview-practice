@@ -5,10 +5,10 @@ from typing import List
 import unittest
 
 
-def reverse_string(s: List[str]) -> None:
-    """Reverses list of characters in place"""
-    i = 0
-    j = len(s) - 1
+def reverse_string(s: List[str], i: int = 0, j: int = None) -> None:
+    """Reverses list of characters in place in s[i...j]"""
+    if j is None:
+        j = len(s) - 1
     while i < j:
         s[i], s[j] = s[j], s[i]
         i += 1
