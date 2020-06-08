@@ -17,12 +17,10 @@ def reverse_words(s: List[str], i: int = 0, j: int = None) -> None:
     if j is None:
         j = len(s) - 1
     reverse_string(s, i, j)
-    while True:
+    while i <= j:
         i, wordend = next_word_inds(s, i, j)
         reverse_string(s, i, wordend)
         i = wordend + 1
-        if i > j:
-            return
 
 
 def reverse_string(s: List[str], i: int, j: int) -> None:
@@ -35,18 +33,21 @@ def reverse_string(s: List[str], i: int, j: int) -> None:
 
 def next_word_inds(s: List[str], i: int, j: int) -> int:
     """Returns start and end indices of next word in s[i...j]"""
+    punctuation = {" ", ",", ":", ";", "/", ".", "!", "?"}
     while i < j and s[i] == " ":
         i += 1
     wordend = i
-    while wordend < j and s[wordend+1] not in {" ", ",", ".", "!", ";"}:
+    while wordend < j and s[wordend+1] not in punctuation:
         wordend += 1
     return i, wordend
 
 
 class TestReverseWords(unittest.TestCase):
     def test_reverse_words(self):
-        messages = ["cake pound steal", "a lovely day",
-                    "i am a", "  more   spaces here ", " you! see  I  "]
+        messages = ["cake pound steal", "day lovely a",
+                    "a am i", " yay  here   spaces more ", " you! see  I  ",
+                    " a ", "forty ", "", " ",
+                    "cake! (mille-feuille) the eating am I happy; am I"]
         stringified = [[x for x in message] for message in messages]
         for message in stringified:
             reverse_words(message)
