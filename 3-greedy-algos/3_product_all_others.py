@@ -15,8 +15,8 @@ from typing import List
 import unittest
 
 
-def get_all_products(arr: List[int]) -> None:
-    """Return answer in place"""
+def get_all_products(arr: List[int]) -> List[int]:
+    """Return answer"""
     n = len(arr)
     if n < 2:
         raise Exception("Input requires at least two ints")
@@ -27,17 +27,13 @@ def get_all_products(arr: List[int]) -> None:
     for i in reversed(range(n-1)):
         rightprods[i] = rightprods[i+1] * arr[i+1]
 
-    # turn arr into leftprods[i] := product(arr[j]) s.t. j < i
-    leftprodval = arr[0]
-    arr[0] = 1
-    for i in range(1, n):
-        val = arr[i]
-        arr[i] = leftprodval
-        leftprodval *= val
-
-    # answer is leftprods[i] * rightprods[i] = product(arr[j]) s.t. i != j
+    # at each iteration, leftprodval := product(arr[j]) s.t. j < i
+    # answer is leftprodval * rightprods[i] = product(arr[j]) s.t. i != j
+    leftprodval = 1
     for i in range(n):
-        arr[i] *= rightprods[i]
+        rightprods[i] *= leftprodval
+        leftprodval *= arr[i]
+    return rightprods
 
 
 class TestProductAllOthers(unittest.TestCase):
@@ -48,8 +44,7 @@ class TestProductAllOthers(unittest.TestCase):
             [[2, 0, 7, 8], [0, 2*7*8, 0, 0]]
         ]
         for test, expected in tests:
-            get_all_products(test)
-            self.assertEqual(test, expected)
+            self.assertEqual(get_all_products(test), expected)
 
 
 if __name__ == "__main__":
