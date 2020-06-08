@@ -12,6 +12,25 @@
 # and "Dana".
 #
 # Assume the input will only contain words and standard punctuation.
+#
+# BONUS
+# 1. We haven't explicitly talked about how to handle more complicated character
+# sets. How would you make your solution work with more unicode characters?
+# What changes need to be made to handle silly sentences like these:
+# I'm singing ♬ on a ☔ day.
+# ☹ + ☕ = ☺.
+#
+# 2. We limited our input to letters, hyphenated words and punctuation. How
+# would you expand your functionality to include numbers, email addresses,
+# twitter handles, etc.?
+#
+# 3. How would you add functionality to identify phrases or words that belong
+# together but aren't hyphenated? ("Fire truck" or "Interview Cake")
+#
+# 4. How could you improve your capitalization algorithm?
+#
+# 5. How would you avoid having duplicate words that are just plural or singular
+# possessives?
 
 from collections import defaultdict
 from typing import Dict
