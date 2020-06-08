@@ -4,8 +4,8 @@
 # the words occurred.
 #
 # Think about capitalized words. For example, look at these sentences:
-# 'After beating the eggs, Dana read the next step:'
-# 'Add milk and eggs, then add flour and sugar.'
+#   'After beating the eggs, Dana read the next step:'
+#   'Add milk and eggs, then add flour and sugar.'
 # What do we want to do with "After", "Dana", and "add"?
 # Your final dictionary should include one "Add" or "add" with a value of 22.
 # Make reasonable (not necessarily perfect) decisions about cases like "After"
