@@ -15,7 +15,6 @@
 # 2. Could we do this "in place" on the input list and save some space? What
 # are the pros and cons of doing this in place?
 
-from myunionfind import UnionFind
 from typing import List, Tuple
 import unittest
 
@@ -26,19 +25,11 @@ def merge_intervals(times: List[Tuple[int]]) -> List[Tuple[int]]:
     merged = []
     for time in times:
         start, end = time
-        if not merged:
+        if not merged or start > merged[-1][1]:
             merged.append(time)
-        elif start <= merged[-1][1]:
-            if end > merged[-1][1]:
-                merged[-1] = (merged[-1][0], end)
-        else:
-            merged.append(time)
+        elif end > merged[-1][1]:
+            merged[-1] = (merged[-1][0], end)
     return merged
-
-
-def merge_intervals_bounded(times: List[Tuple[int]], k: int) -> List[Tuple[int]]:
-    """Merge list of closed intervals (i, j), with upper bound k"""
-    uf = UnionFind(k+1)
 
 
 class TestMergeMeetingTimes(unittest.TestCase):
