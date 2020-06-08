@@ -10,6 +10,9 @@
 # Output: [7*3*4, 1*3*4, 1*7*4, 1*7*3]
 #
 # Here's the catch: You can't use division in your solution!
+#
+# BONUS
+# What if you could use division? Careful—watch out for zeroes!
 
 from typing import List
 import unittest
