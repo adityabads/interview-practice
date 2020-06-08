@@ -18,7 +18,7 @@ import unittest
 
 
 def find_repeat(arr: List[int], maxval: int) -> int:
-    """Returns a repeated element in `arr`"""
+    """Returns a repeated element in `arr`, whose values are between 1...maxval"""
     i = 1
     j = maxval
     while i < j:
