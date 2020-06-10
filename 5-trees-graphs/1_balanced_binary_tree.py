@@ -6,11 +6,12 @@
 # leaf nodes is no greater than one.
 
 from typing import Tuple
-from mybinarytree import BinaryTreeNode
+from mybinarytree import BinaryTreeNode, make_binary_tree
 import unittest
 
 
 def is_balanced(tree: BinaryTreeNode) -> bool:
+    """Returns true iff all leaf nodes have depths within 1 of each other"""
     if tree is None:
         return True
     heights = []
@@ -31,18 +32,25 @@ def is_balanced(tree: BinaryTreeNode) -> bool:
 
 class TestBalancedBinaryTree(unittest.TestCase):
     def test_is_balanced(self):
-        tree = BinaryTreeNode(1)
-        tree.insert_left(1)
-        tree.insert_right(1)
-        self.assertTrue(is_balanced(tree))
-        tree.left.insert_right(1)
-        self.assertTrue(is_balanced(tree))
-        tree.right.insert_left(1)
-        self.assertTrue(is_balanced(tree))
-        tree.right.left.insert_right(1)
-        self.assertTrue(is_balanced(tree))
-        tree.right.left.right.insert_right(1)
-        self.assertFalse(is_balanced(tree))
+        trues = [
+            [],
+            [1],
+            [1, 2],
+            [1, 2, 3],
+            [1, 2, 3, 4],
+            [1, 2, None, 4],
+            [1, 2, 3, 4, None, 5, None],
+            [1, 2, 3, 4, None, 5, None, 6],
+        ]
+        falses = [
+            [1, 2, 3, None, 4, None, None, None, None, 5],
+        ]
+        for arr in trues:
+            tree = make_binary_tree(arr)
+            self.assertTrue(is_balanced(tree))
+        for arr in falses:
+            tree = make_binary_tree(arr)
+            self.assertFalse(is_balanced(tree))
 
 
 if __name__ == "__main__":
