@@ -28,7 +28,7 @@ def make_change_memo(amount: int, denominations: List[int], memo: Dict[int, int]
         return 0
     elif amount == 0 or amount == minval:
         return 1
-    if memo is None:
+    if not memo:
         memo = {}
 
     total = 0

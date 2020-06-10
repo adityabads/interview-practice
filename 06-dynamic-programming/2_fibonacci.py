@@ -12,6 +12,7 @@
 # If you're good with matrix multiplication you can bring the time cost down
 # even further, to O(lg n). Can you figure out how?
 
+from typing import Dict
 import unittest
 
 
@@ -23,7 +24,19 @@ def fibonacci_recursive(n: int) -> int:
     return fibonacci(n-1) + fibonacci(n-2)
 
 
-def fibonacci(n: int) -> int:
+def fibonacci_memo(n: int, memo: Dict[int, int] = None) -> int:
+    if n < 0:
+        raise ValueError("n must be positive")
+    if n == 0 or n == 1:
+        return n
+    if not memo:
+        memo = {}
+    if n not in memo:
+        memo[n] = fibonacci(n-1) + fibonacci(n-2)
+    return memo[n]
+
+
+def fibonacci_dp(n: int) -> int:
     if n < 0:
         raise ValueError("n must be positive")
     if n == 0 or n == 1:
@@ -43,7 +56,8 @@ class TestFibonacci(unittest.TestCase):
         ]
         for n, expected in tests:
             self.assertEqual(fibonacci_recursive(n), expected)
-            self.assertEqual(fibonacci(n), expected)
+            self.assertEqual(fibonacci_memo(n), expected)
+            self.assertEqual(fibonacci_dp(n), expected)
 
 
 if __name__ == "__main__":
