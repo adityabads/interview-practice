@@ -19,24 +19,26 @@ class MaxStack:
         self.stack = Stack()
         self.maxvals = Stack()
 
-    def push(self, item):
+    def push(self, item: int) -> None:
         """Push a new item onto the stack"""
         self.stack.push(item)
-        if self.maxvals.peek() is None or item >= self.maxvals.peek():
+        if self.maxvals.isempty() or item >= self.maxvals.peek():
             self.maxvals.push(item)
 
-    def pop(self):
+    def pop(self) -> int:
         """Remove and return the last item"""
+        if self.stack.isempty():
+            return None
         val = self.stack.pop()
-        if val is not None and val == self.maxvals.peek():
+        if val == self.maxvals.peek():
             self.maxvals.pop()
         return val
 
-    def peek(self):
+    def peek(self) -> int:
         """Return the last item without removing it"""
         return self.stack.peek()
 
-    def get_max(self):
+    def get_max(self) -> int:
         """Return the largest element in the stack"""
         return self.maxvals.peek()
 
@@ -44,8 +46,9 @@ class MaxStack:
 class TestMaxStack(unittest.TestCase):
     def test_max_stack(self):
         pushes = [
+            [0, 0],
             [1, 1],
-            [-1, 1],
+            [0, 1],
             [4, 4],
             [3, 4],
             [4, 4],
@@ -58,7 +61,8 @@ class TestMaxStack(unittest.TestCase):
             [4, 4],
             [3, 4],
             [4, 1],
-            [-1, 1]
+            [0, 1],
+            [1, 0]
         ]
         maxstack = MaxStack()
         for val, expected in pushes:

@@ -19,3 +19,7 @@ class Stack:
         if not self.items:
             return None
         return self.items[-1]
+
+    def isempty(self):
+        """Return true iff stack is empty"""
+        return len(self.items) == 0
