@@ -8,11 +8,11 @@ class BinaryTreeNode:
         self.left = None
         self.right = None
 
-    def insert_left(self, val):
+    def insert_left(self, val) -> None:
         self.left = BinaryTreeNode(val)
         return self.left
 
-    def insert_right(self, val):
+    def insert_right(self, val) -> None:
         self.right = BinaryTreeNode(val)
         return self.right
 
