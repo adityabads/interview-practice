@@ -3,7 +3,7 @@
 # of a singly-linked list, and returns the kth to last node in the list.
 #
 # BONUS
-# Can we do better? What if we expect nn to be huge and kk to be pretty small?
+# Can we do better? What if we expect nn to be huge and k to be pretty small?
 # In this case, our target node will be close to the end of the list...so it
 # seems a waste that we have to walk all the way from the beginning twice.
 # Can we trim down the number of steps in the "second trip"? One pointer will
@@ -12,7 +12,7 @@
 # second pointer doesn't have to start all the way at the beginning? Can we
 # store these "checkpoints" in constant space? Note: this approach only saves
 # time if we know that our target node is towards the end of the list (in
-# other words, nn is much larger than k).
+# other words, n is much larger than k).
 
 from mylinkedlist import LinkedList, LinkedListNode
 import unittest
