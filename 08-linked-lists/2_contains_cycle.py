@@ -17,6 +17,7 @@ import unittest
 
 
 def contains_cycle(head: LinkedListNode) -> bool:
+    """Returns true iff linked list contains a cycle"""
     if not head or not head.next:
         return False
     slow = head

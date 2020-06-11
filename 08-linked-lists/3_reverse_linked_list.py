@@ -12,6 +12,7 @@ import unittest
 
 
 def reverse_linked_list(head: LinkedListNode) -> LinkedListNode:
+    """Reverses a linked list in-place, returns new head"""
     if not head:
         return None
     prev = None
