@@ -1,4 +1,4 @@
-# Find repeat
+# Find repeat, space edition
 # We have a list of integers, where the integers are in the range 1...n and the
 # list has a length of n+1. It follows that our list has at least one integer
 # which appears at least twice. But it may have several duplicates, and each
@@ -12,6 +12,8 @@
 # BONUS
 # This function always returns one duplicate, but there may be several duplicates.
 # Write a function that returns all duplicates.
+#
+# NOTE: See `find_repeat_challenge` (problem 5.6) for an optimal solution.
 
 from typing import List
 import unittest

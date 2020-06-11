@@ -1,9 +1,9 @@
 # Find repeat, challenge mode
 # We have a list with n+1 integers in the range 1..n. Thus, the list must have
-# at least 1 duplicate. The previous challenge was to find a duplicate number,
-# while optimizing for space. We used a divide and conquer approach, iteratively
-# cutting the list in half to find a duplicate integer in O(n lg n) time and
-# O(1) space (sort of a modified binary search).
+# at least 1 duplicate. In problem 4.2, the challenge was to find a duplicate
+# number, while optimizing for space. We used a divide and conquer approach,
+# iteratively cutting the list in half to find a duplicate integer in O(n lg n)
+# time and O(1) space (sort of a modified binary search).
 #
 # But we can actually do better. We can find a duplicate integer in O(n) time
 # while keeping our space cost at O(1).
