@@ -3,6 +3,10 @@
 # except for one number that appears twice. Write a function for finding the
 # number that appears twice.
 #
+# BONUS
+# If our list contains huge numbers or is really long, our sum might be so big
+# it causes an integer overflow. ↴ What are some ways to protect against this?
+#
 # NOTE: Also see `find_repeat_space` (problem 4.2) for a space-optimized solution,
 # and `find_repeat_challenge` (problem 5.6) for an optimal solution where multiple
 # duplicates are allowed
