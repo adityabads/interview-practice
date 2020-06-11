@@ -2,15 +2,13 @@
 # Given the list of IDs, which contains many duplicate integers and one unique
 # integer, find the unique integer.
 
+from functools import reduce
 from typing import List
 import unittest
 
 
 def find_unique(arr: List[int]) -> int:
-    running = 0
-    for val in arr:
-        running ^= val
-    return running
+    return reduce(lambda x, y: x ^ y, arr)
 
 
 class TestFindUnique(unittest.TestCase):
