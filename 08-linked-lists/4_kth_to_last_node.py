@@ -1,6 +1,18 @@
 # kth to last node
 # Write a function kth_to_last_node() that takes an integer k and the head_node
 # of a singly-linked list, and returns the kth to last node in the list.
+#
+# BONUS
+# Can we do better? What if we expect nn to be huge and kk to be pretty small?
+# In this case, our target node will be close to the end of the list...so it
+# seems a waste that we have to walk all the way from the beginning twice.
+# Can we trim down the number of steps in the "second trip"? One pointer will
+# certainly have to travel all the way from head to tail in the list to get
+# the total length...but can we store some "checkpoints" as we go so that the
+# second pointer doesn't have to start all the way at the beginning? Can we
+# store these "checkpoints" in constant space? Note: this approach only saves
+# time if we know that our target node is towards the end of the list (in
+# other words, nn is much larger than k).
 
 from mylinkedlist import LinkedList, LinkedListNode
 import unittest
