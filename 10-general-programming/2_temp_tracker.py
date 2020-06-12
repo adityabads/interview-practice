@@ -19,8 +19,7 @@
 #
 # BONUS
 # There's at least one way to use a just-in-time approach, have O(1) time for
-# each operation, and keep our space cost at O(1)O(1) for nn inserts. How
-# could we do that?
+# each operation, and keep our space cost at O(1) for n inserts. How could we do that?
 
 from collections import Counter
 import random
